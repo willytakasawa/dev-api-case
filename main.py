@@ -81,7 +81,7 @@ class Status(Resource):
     def get(self, id_agendamento):
         result = Agendamento.query.filter_by(id_agendamento=id_agendamento).first()
         if not result:
-            abort(404, message="id_agendamento inexistente...")
+            abort(404, message="ID_AGENDAMENTO INEXISTENTE...")
         return result
 
 api.add_resource(Status, "/status/<int:id_agendamento>")
@@ -94,7 +94,7 @@ class Cancelamento(Resource):
         args = agendamento_update_args.parse_args()
         result = Agendamento.query.filter_by(id_agendamento=id_agendamento).first()
         if not result:
-            abort(404, message="id_agendamento inexistente...")
+            abort(404, message="ID_AGENDAMENTO INEXISTENTE...")
         if result:
             if args['status_agendamento']:
                 result.status_agendamento = args['status_agendamento']
