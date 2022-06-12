@@ -1,0 +1,16 @@
+curl --location --request POST 'http://localhost:5000/agendamento' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "id_agendamento": 1,
+    "id_usuario": 11,
+    "dt_envio": "2022/12/11",
+    "formato_comunicacao": "Whatsapp"
+}'
+
+curl --location --request GET 'http://localhost:5000/status/1'
+
+curl --location --request PATCH 'http://localhost:5000/cancelamento/1' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "status_agendamento": "cancelado"
+}'
